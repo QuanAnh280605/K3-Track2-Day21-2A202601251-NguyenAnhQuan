@@ -8,6 +8,11 @@ import os
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, f1_score
 
+if "MLFLOW_TRACKING_URI" not in os.environ:
+    os.environ["MLFLOW_TRACKING_URI"] = "sqlite:///mlflow.db"
+if "MLFLOW_ARTIFACT_ROOT" not in os.environ:
+    os.environ["MLFLOW_ARTIFACT_ROOT"] = "./mlartifacts"
+
 EVAL_THRESHOLD = 0.70
 
 
