@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/project/K3-Track2-Day21-2A202601251-NguyenAnhQuan/mlruns/0/7691a985d16d4e7d99dbce44abd4a4fe/artifacts
+end_time: 1787283847189
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7691a985d16d4e7d99dbce44abd4a4fe
+run_name: luxuriant-lynx-78
+run_uuid: 7691a985d16d4e7d99dbce44abd4a4fe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1787283843430
+status: 3
+tags: []
+user_id: admin
