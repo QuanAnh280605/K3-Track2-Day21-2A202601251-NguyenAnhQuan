@@ -44,3 +44,26 @@ Trong quá trình thực nghiệm cục bộ với mô hình `RandomForestClassi
 3. **Cấu hình Systemd Service trên Cloud VM:**
    - *Vấn đề:* Ký tự escape biến môi trường khiến systemd báo lỗi cú pháp service.
    - *Giải pháp:* Chuẩn hóa nội dung file `mlops-serve.service`, thực hiện `daemon-reload` và kiểm thử tự động khởi động server REST API với FastAPI.
+
+---
+
+## 4. Minh Chứng Thực Hiện & Kết Quả Chụp Màn Hình
+
+### 4.1 Bước 1 - Thực nghiệm MLflow Tracking
+| Run 1 (acc: 0.5640) | Run 2 (acc: 0.5580) | Run 3 (acc: 0.6640 - Best) |
+|---|---|---|
+| ![MLflow Run 1](./screenshots/01_mlflow_run1.png) | ![MLflow Run 2](./screenshots/02_mlflow_run2.png) | ![MLflow Run 3](./screenshots/03_mlflow_run3.png) |
+
+### 4.2 Bước 2 & 3 - CI/CD Pipeline, Eval Gate & Triển Khai Cloud
+- **Cơ chế Eval Gate chặn mô hình không đạt chuẩn (Accuracy < 0.70):**  
+  ![Eval Gate Blocked](./screenshots/04_eval_gate_blocked.png)
+
+- **GitHub Actions Pipeline 4 Jobs Thành Công Toàn Diện (Test -> Train -> Eval -> Deploy):**  
+  ![CI/CD All Green](./screenshots/05_cicd_all_green.png)
+
+- **Kiểm thử REST API Endpoint trên Cloud VM (`/health` và `/predict`):**  
+  ![API Curl Test](./screenshots/06_api_curl_test.png)
+
+- **Google Cloud Storage Bucket lưu trữ DVC datasets và model artifact:**  
+  ![GCS Bucket](./screenshots/07_gcs_storage_bucket.png)
+
